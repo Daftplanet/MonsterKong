@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-montserrat: var(--font-montserrat);
+  --font-roboto: var(--font-roboto);
+
+  /* Color scheme based on the original site */
+  --background: 260 35% 15%;      /* Dark purple background */
+  --foreground: 0 0% 100%;       /* White text */
+
+  --muted: 260 20% 40%;
+  --muted-foreground: 260 5% 80%;
+
+  --popover: 260 35% 10%;
+  --popover-foreground: 0 0% 100%;
+
+  --card: 260 35% 20%;
+  --card-foreground: 0 0% 100%;
+
+  --border: 260 20% 30%;
+  --input: 260 20% 30%;
+
+  --primary: 175 70% 50%;        /* Cyan */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 290 70% 50%;     /* Magenta */
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 265 70% 50%;        /* Purple */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 210 40% 98%;
+
+  --ring: 175 70% 50%;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+  }
+
+  p, span, a, button, li {
+    font-family: var(--font-roboto);
+  }
+}
+
+/* Custom utility classes */
+.text-gradient {
+  background: linear-gradient(to right, #49bdd1, #c926ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, #452aca, #c926ac);
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Button and interactive elements */
+.btn-primary {
+  @apply bg-gradient text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:opacity-90 text-lg;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
